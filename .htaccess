@@ -1,4 +1,6 @@
 RewriteEngine On
+
+# Só redireciona pro index.php se não for arquivo nem pasta real
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule ^ index.php [QSA,L]
